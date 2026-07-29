@@ -138,6 +138,12 @@ nav.primary-nav a[aria-current="page"] { color: #5c8a1f; }
   padding: 90px 0 70px;
   text-align: center;
 }
+.hero.hero-home {
+  background: linear-gradient(135deg, rgba(4,30,66,0.82) 0%, rgba(10,51,99,0.72) 100%), url("images/daybreak-hero-lake.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 110px 0 90px;
+}
 .hero h1 { color: var(--white); }
 .hero p.lead { color: #d7dee8; font-size: 1.15rem; max-width: 640px; margin: 0 auto 2em; }
 .hero .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
