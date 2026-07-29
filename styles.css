@@ -148,6 +148,37 @@ nav.primary-nav a[aria-current="page"] { color: #5c8a1f; }
 .hero p.lead { color: #d7dee8; font-size: 1.15rem; max-width: 640px; margin: 0 auto 2em; }
 .hero .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* Full-width banner image */
+.banner-image {
+  width: 100%;
+  max-width: var(--max-width);
+  height: auto;
+  display: block;
+  margin: 32px auto 0;
+  border-radius: var(--radius);
+}
+
+/* Image + text split layout */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+}
+.split-layout img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
+  position: sticky;
+  top: 100px;
+}
+.split-layout .split-text .section-intro { text-align: left; margin: 0 0 1.5em; max-width: none; }
+@media (max-width: 700px) {
+  .split-layout { grid-template-columns: 1fr; }
+  .split-layout img { max-height: 280px; }
+}
+
 /* Sections */
 section { padding: 70px 0; }
 section.alt { background: var(--gray-light); }
