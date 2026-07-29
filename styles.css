@@ -373,6 +373,70 @@ table.compare-table th { color: var(--navy); font-weight: 700; background: var(-
   flex-shrink: 0;
 }
 
+/* Newsletter signup (Mailchimp embed) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.newsletter-section {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+}
+.newsletter-section h2 { color: var(--white); }
+.newsletter-section p { color: #d7dee8; }
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 460px;
+  margin: 0 auto;
+}
+.newsletter-form input[type="email"] {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+.newsletter-form .btn { flex: 0 0 auto; }
+
+/* Compact footer variant */
+.newsletter-footer {
+  margin-top: 14px;
+}
+.newsletter-footer .newsletter-form {
+  justify-content: flex-start;
+  max-width: none;
+}
+.newsletter-footer input[type="email"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2c4970;
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+.newsletter-footer input[type="email"]::placeholder { color: #9fb0c7; }
+.newsletter-footer .btn {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+}
+
+/* Inline variant (blog/contact page) */
+.newsletter-inline {
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 24px;
+}
+.newsletter-inline .newsletter-form { justify-content: flex-start; margin: 0; }
+
 /* Photos */
 .photo-frame {
   width: 100%;
