@@ -365,6 +365,14 @@ table.compare-table th { color: var(--navy); font-weight: 700; background: var(-
 .village-tip strong { color: var(--navy); }
 .back-to-top { font-size: 0.85rem; display: inline-block; margin-top: 4px; }
 
+.inline-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: -4px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
 /* Photos */
 .photo-frame {
   width: 100%;
