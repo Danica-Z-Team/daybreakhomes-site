@@ -2,56 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.daybreakhomes.com/</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/about.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.daybreakhomes.com/contact.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.daybreakhomes.com/blog/market-update-2026.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog/first-time-buyer-guide.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog/selling-your-home-daybreak.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog/daybreak-village-guide.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog/relocating-to-daybreak.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.daybreakhomes.com/blog/daybreak-hoa-guide.html</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.daybreakhomes.com/blog/daybreak-townhome-special-assessment.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -148,6 +148,32 @@ nav.primary-nav a[aria-current="page"] { color: #5c8a1f; }
 .hero p.lead { color: #d7dee8; font-size: 1.15rem; max-width: 640px; margin: 0 auto 2em; }
 .hero .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
+/* Article byline / updated date */
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: center;
+  color: var(--gray-text);
+  font-size: 0.92rem;
+  margin: 4px 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e4e8ee;
+}
+.article-meta strong { color: var(--navy); }
+
+/* Footer credential bio */
+.footer-bio {
+  max-width: var(--max-width);
+  margin: 0 auto 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: #9fb0c7;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.footer-bio a { color: #fff; text-decoration: underline; }
+
 /* Full-width banner image */
 .banner-image {
   width: 100%;
