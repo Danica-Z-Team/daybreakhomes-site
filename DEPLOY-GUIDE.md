@@ -25,20 +25,44 @@ Your code now lives on GitHub. That's the whole point of Part 1: a safe, version
 
 Any time you want to update the site later, edit the files on GitHub (or re-upload changed files the same way as Part 1, step 6-8) and Vercel automatically redeploys within a minute or two. You never have to touch Vercel again after this initial setup.
 
-## Part 3: Point daybreakhomes.com at Vercel
+## Part 3: Point daybreakhomes.com at Vercel (GoDaddy)
 
-You mentioned you're not sure where daybreakhomes.com is registered. Two ways to find out:
+Since daybreakhomes.com is registered at GoDaddy, here's the exact path.
 
-- Go to whois.com, enter `daybreakhomes.com`, and look for "Registrar" in the results.
-- Or check wherever you manage zanderteam.com. Since daybreakhomes.com currently redirects to zanderteam.com, it's likely sitting in the same registrar account (GoDaddy, Namecheap, Squarespace Domains, etc.) or was set up by whoever built zanderteam.com.
+### Step 1: Add the domain in Vercel first
 
-Once you know the registrar:
+1. In your Vercel dashboard, open the `daybreakhomes-site` project.
+2. Go to **Settings > Domains**.
+3. Type in `daybreakhomes.com` and click **Add**.
+4. Also add `www.daybreakhomes.com` right after (Vercel will offer to redirect one to the other, either direction is fine, most people point `www` to the root domain).
+5. Vercel will now show you the DNS records it needs. For the root domain (`daybreakhomes.com`) that's normally:
+   - Type: **A**, Name: **@**, Value: **76.76.21.21**
+   - For `www`, Type: **CNAME**, Name: **www**, Value: **cname.vercel-dns.com**
+   
+   Keep this Vercel page open in a tab, you'll copy these exact values into GoDaddy next. (Vercel occasionally updates its IP, always use whatever it displays on your own Domains screen over the numbers above.)
 
-1. Log into that registrar and find **DNS settings** or **DNS management** for daybreakhomes.com.
-2. **Remove** the existing redirect/forwarding rule that currently points it to zanderteam.com.
-3. In Vercel, go to your project, click **Settings > Domains**, and type in `daybreakhomes.com`. Vercel will show you exact DNS records to add (usually an A record and a CNAME for the `www` version).
-4. Add those exact records in your registrar's DNS settings.
-5. DNS changes can take anywhere from a few minutes to 24-48 hours to fully propagate. Vercel's Domains page will show a green checkmark once it detects the site is live at your domain.
+### Step 2: Remove the old redirect in GoDaddy
+
+1. Log into godaddy.com and go to **My Products**.
+2. Find `daybreakhomes.com` and click **DNS** (or **Manage DNS**).
+3. Since the domain currently redirects to zanderteam.com, check two places:
+   - **Forwarding** section (near the top of the DNS page): if there's a domain forward set up to zanderteam.com, click the **⋯** menu next to it and **Delete**.
+   - The **DNS Records** table itself: look for any existing **A** record on `@` or **CNAME** on `www` and delete those too, they'll conflict with the new Vercel records.
+
+### Step 3: Add the Vercel records in GoDaddy
+
+Still on the DNS Records page, click **Add** and create:
+
+1. **Type:** A, **Name:** @, **Value:** 76.76.21.21, **TTL:** 1 Hour (or default)
+2. **Type:** CNAME, **Name:** www, **Value:** cname.vercel-dns.com, **TTL:** 1 Hour (or default)
+
+Save both. Use the exact values Vercel showed you in Step 1 if they differ from these.
+
+### Step 4: Confirm
+
+1. Go back to the Vercel Domains tab. It usually takes a few minutes, sometimes up to a few hours, for Vercel to detect the change and show a green checkmark next to both domains.
+2. Once it's green, visit `https://daybreakhomes.com` in a browser to confirm the real site loads instead of the zanderteam.com redirect.
+3. If it still shows the old redirect after a few hours, double check Step 2, a leftover GoDaddy forwarding rule is the most common cause.
 
 ## Part 4: Get It Indexed by Google
 
