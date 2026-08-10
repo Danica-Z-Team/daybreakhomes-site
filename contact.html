@@ -89,11 +89,13 @@
   <section aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-grid">
-        <form class="contact-form" action="#" method="POST">
+        <form class="contact-form" action="/api/contact" method="POST">
           <!--
-            Deployment note: this form has no backend yet. Once the site is hosted,
-            wire this up to a form service (e.g. Netlify Forms, Formspree) or your CRM
-            so submissions actually reach you. See the deployment guide for options.
+            This form posts to /api/contact (a Vercel serverless function, see api/contact.js),
+            which sends the lead directly into Follow Up Boss as a General Inquiry event.
+            script.js intercepts the submit to keep visitors on this page instead of
+            navigating to a raw JSON response. The action attribute above is a fallback
+            only, in case JavaScript is disabled.
           -->
           <div class="form-row">
             <label for="name">Name</label>
@@ -110,6 +112,10 @@
           <div class="form-row">
             <label for="message">What are you looking to do?</label>
             <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label for="website">Leave this field blank</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
           </div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>

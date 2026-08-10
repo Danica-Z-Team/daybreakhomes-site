@@ -80,6 +80,22 @@ Save both. Use the exact values Vercel showed you in Step 1 if they differ from 
 4. Add your phone number (801-446-2662), website (daybreakhomes.com), hours, and category ("Real Estate Agent").
 5. Google will mail or call to verify the listing. Once verified, it can appear in local map results for searches like "Daybreak real estate agent."
 
+## Part 6: Connect the Contact Form to Follow Up Boss
+
+The Contact page form now posts to `/api/contact`, a small serverless function (in the `api` folder) that sends the message straight into Follow Up Boss as a "General Inquiry" lead. No Zapier needed for this one, it talks to FUB directly. Two things to do:
+
+1. **Get a Follow Up Boss API key.** In FUB, click **Admin** in the top nav, then **API**, then **Create API Key**. Name it something like "Daybreak Website" and click Create. Copy the key immediately, FUB only shows it once.
+2. **Add it to Vercel as an environment variable** (never put it directly in a file that goes to GitHub, since that repo may be public). In your Vercel project, go to **Settings > Environment Variables**, add:
+   - Name: `FUB_API_KEY`
+   - Value: paste the key you copied
+   - Apply to: Production (and Preview/Development if you want to test there too)
+   
+   Save, then redeploy (Vercel usually prompts you to redeploy after adding an env variable, or you can trigger one from the Deployments tab).
+3. Upload the new `api/contact.js` file to GitHub the same way you uploaded the original files (Part 1, steps 6-8), keeping the `api` folder structure intact. Vercel will pick it up automatically as a serverless function, no extra configuration needed.
+4. Test it: submit the contact form on the live site with your own info, then check Follow Up Boss for a new "General Inquiry" event/lead tagged "Website Lead."
+
+If a submission doesn't show up in FUB, the most common cause is a typo in the `FUB_API_KEY` environment variable name or forgetting to redeploy after adding it.
+
 ## What I Still Need From You
 
 To finish the schema markup and profile setup properly:

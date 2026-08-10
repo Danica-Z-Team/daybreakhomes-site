@@ -15,4 +15,43 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // Contact form -> /api/contact (Vercel serverless function) -> Follow Up Boss
+  var contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
+      var payload = {
+        name: contactForm.name.value,
+        email: contactForm.email.value,
+        phone: contactForm.phone.value,
+        message: contactForm.message.value,
+        website: contactForm.website.value // honeypot, should always be empty
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          if (!response.ok) { throw new Error('Request failed'); }
+          contactForm.innerHTML =
+            '<p style="font-size:1.1rem;">Thanks' +
+            (payload.name ? ', ' + payload.name : '') +
+            '! We got your message and will follow up personally, usually within one business day. ' +
+            'Need us sooner? Call <a href="tel:8014462662">801-446-2662</a>.</p>';
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+          alert('Something went wrong sending your message. Please call or text us directly at 801-446-2662.');
+        });
+    });
+  }
 });
