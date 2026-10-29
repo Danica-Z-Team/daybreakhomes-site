@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,14 +90,7 @@
   <section aria-labelledby="contact-heading">
     <div class="container">
       <div class="contact-grid">
-        <form class="contact-form" action="/api/contact" method="POST">
-          <!--
-            This form posts to /api/contact (a Vercel serverless function, see api/contact.js),
-            which sends the lead directly into Follow Up Boss as a General Inquiry event.
-            script.js intercepts the submit to keep visitors on this page instead of
-            navigating to a raw JSON response. The action attribute above is a fallback
-            only, in case JavaScript is disabled.
-          -->
+        <form class="contact-form" method="POST">
           <div class="form-row">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -113,10 +107,11 @@
             <label for="message">What are you looking to do?</label>
             <textarea id="message" name="message" rows="4"></textarea>
           </div>
-          <div style="position:absolute; left:-9999px;" aria-hidden="true">
-            <label for="website">Leave this field blank</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;" aria-hidden="true">
+            <input type="text" name="company_website" tabindex="-1" autocomplete="off">
           </div>
+          <input type="hidden" name="form_ts" value="">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFrN9I3ye7VUx4mu" data-action="contact" data-theme="light"></div>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
         <div class="contact-info-box">
@@ -141,7 +136,7 @@
         <form action="https://zanderteam.us13.list-manage.com/subscribe/post?u=d3f88b86735500e01b75ca787&amp;id=f0ec68bf55&amp;f_id=00582ee2f0" method="post" target="_blank" class="newsletter-form" novalidate>
           <label for="mce-EMAIL-contact" class="sr-only">Email address</label>
           <input type="email" name="EMAIL" id="mce-EMAIL-contact" placeholder="you@email.com" required>
-          <input type="hidden" name="tags" value="TODO_DAYBREAKHOMES_TAG_ID">
+          <input type="hidden" name="tags" value="6681003,6681004">
           <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_d3f88b86735500e01b75ca787_f0ec68bf55" tabindex="-1" value=""></div>
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
@@ -166,7 +161,7 @@
       <form action="https://zanderteam.us13.list-manage.com/subscribe/post?u=d3f88b86735500e01b75ca787&amp;id=f0ec68bf55&amp;f_id=00582ee2f0" method="post" target="_blank" class="newsletter-form" novalidate>
         <label for="mce-EMAIL-footer" class="sr-only">Email address</label>
         <input type="email" name="EMAIL" id="mce-EMAIL-footer" placeholder="you@email.com" required>
-        <input type="hidden" name="tags" value="TODO_DAYBREAKHOMES_TAG_ID">
+        <input type="hidden" name="tags" value="6681003,6681004">
         <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_d3f88b86735500e01b75ca787_f0ec68bf55" tabindex="-1" value=""></div>
         <button type="submit" class="btn btn-primary">Subscribe</button>
       </form>
