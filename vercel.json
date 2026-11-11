@@ -1,0 +1,69 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/founders-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/harvest-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/lakeside-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/monarch-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/summerview-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/overlake-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/kestrel-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/blossom-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/arrowhead-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/founders-village-vs-founders-park-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/harvest-village-vs-springhouse-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/lakeside-village-vs-lake-village.html",
+      "destination": "/blog/daybreak-village-guide.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/eastlake-village-vs-founders-village.html",
+      "destination": "/blog/eastlake-village.html",
+      "statusCode": 301
+    }
+  ]
+}
